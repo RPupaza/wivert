@@ -6,6 +6,8 @@ class AdvertsController extends BaseController{
 
         $hp = Hotspot::where('name', '=', $hotspot)->first();
         $adv = Advert::join('advertisers', 'adverts.advertiser', '=', 'advertisers.id')->where('adverts.name','=',$advert)->first();
+        $deals = Deal::where('advert', '=', $adv['id'])->get();
+       // dd($deals);
         if ($hp == NULL)
         {
             $hp = Hotspot::find(1);
@@ -13,7 +15,7 @@ class AdvertsController extends BaseController{
         if ($adv == NULL){
             return Redirect::to('/'.$hotspot)->with('message','STOP messing with the link !')->with('hp', $hp)->with('hotspot', $hotspot)->with('errclass', 'alert-danger');
         } else {
-            return View::make('adverts')->with('advs',$adv)->with('hp', $hp)->with('hotspot', $hotspot);
+            return View::make('adverts')->with('advs',$adv)->with('hp', $hp)->with('hotspot', $hotspot)->with('deals',$deals);
         }
     }
 }

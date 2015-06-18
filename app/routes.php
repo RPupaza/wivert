@@ -15,6 +15,7 @@
 
 Route::get('/{hotspot}', 'IndexController@index');
 Route::get('/{hotspot}/adverts/{advert}', 'AdvertsController@getAdvert');
+Route::get('{hotspot}/adverts/{advert}/deals/{name}', 'DealsController@getDeal');
 Route::get('{hotspot}/register', 'UsersController@getRegister');
 Route::get('{hotspot}/logout', 'UsersController@getLogout');
 Route::post('{hotspot}/register', array('uses'=> 'UsersController@create'));

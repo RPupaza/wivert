@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class AdvertsTable extends Migration {
+class DealsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -11,15 +11,14 @@ class AdvertsTable extends Migration {
 	 */
     public function up()
     {
-        Schema::create('adverts', function($table) {
+        Schema::create('deals', function($table) {
             $table->increments('id');
             $table->string('name', 100);
-            $table->string('gml', 300);
-            $table->integer('city')->unsigned();
-            $table->integer('category')->unsigned();
-            $table->string('address', 300);
+            $table->string('description', 300);
+            $table->float('price')->unsigned();
+            $table->integer('available')->unsigned();
             $table->string('image', 300);
-            $table->integer('advertiser')->unsigned();
+            $table->integer('advert')->unsigned();
             $table->timestamps();
         });
     }
@@ -31,7 +30,7 @@ class AdvertsTable extends Migration {
      */
     public function down()
     {
-        Schema::drop('adverts');
+        Schema::drop('deals');
     }
 
 }

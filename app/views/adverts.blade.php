@@ -38,102 +38,27 @@
                 <table class="table table-hover">
                     <thead>
                     <tr>
-                        <th>Product</th>
+                        <th>Deals</th>
                         <th class="text-center">Price</th>
-                        <th class="text-center">Views</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td class="col-sm-8 col-md-6">
-                            <div class="media">
-                                <a class="thumbnail pull-left" href="#">
-                                    <img class="media-object" src="http://placehold.it/72x72/e0e0e0" style="width: 72px; height: 72px;" />
-                                </a>
-                                <div class="media-body">
-                                    <h4 class="media-heading"><a href="#">Product name</a></h4>
-                                    <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla adipiscing tempor ornare. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac ...</small></p>
+                    @foreach($deals as $deal)
+                        <tr>
+                            <td class="col-sm-8 col-md-6">
+                                <div class="media">
+                                    <a class="thumbnail pull-left" href="{{url($hotspot.'/adverts/'.$advs['name'].'/deals/'.$deal['name'])}}">
+                                        <img class="media-object" src="/img/deals/thumb/{{$deal['image']}}" style="width: 72px; height: 72px;" />
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading"><a href="{{url($hotspot.'/adverts/'.$advs['name'].'/deals/'.$deal['name'])}}">{{str_replace('-', ' ',$deal['name'])}}</a></h4>
+                                        <p><small>{{$deal['description']}}</small></p>
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                        <td class="col-sm-1 col-md-1 text-center" style="vertical-align: middle;"><strong>110.87 EUR</strong></td>
-                        <td class="col-sm-1 col-md-1 text-center" style="vertical-align: middle;">76x</td>
-                    </tr>
-                    <tr>
-                        <td class="col-sm-8 col-md-6">
-                            <div class="media">
-                                <a class="thumbnail pull-left" href="#">
-                                    <img class="media-object" src="http://placehold.it/72x72/e0e0e0" style="width: 72px; height: 72px;" />
-                                </a>
-                                <div class="media-body">
-                                    <h4 class="media-heading"><a href="#">Product name</a></h4>
-                                    <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla adipiscing tempor ornare. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac ...</small></p>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="col-sm-1 col-md-1 text-center" style="vertical-align: middle;"><strong>110.87 EUR</strong></td>
-                        <td class="col-sm-1 col-md-1 text-center" style="vertical-align: middle;">76x</td>
-                    </tr>
-                    <tr>
-                        <td class="col-sm-8 col-md-6">
-                            <div class="media">
-                                <a class="thumbnail pull-left" href="#">
-                                    <img class="media-object" src="http://placehold.it/72x72/e0e0e0" style="width: 72px; height: 72px;" />
-                                </a>
-                                <div class="media-body">
-                                    <h4 class="media-heading"><a href="#">Product name</a></h4>
-                                    <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla adipiscing tempor ornare. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac ...</small></p>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="col-sm-1 col-md-1 text-center" style="vertical-align: middle;"><strong>110.87 EUR</strong></td>
-                        <td class="col-sm-1 col-md-1 text-center" style="vertical-align: middle;">76x</td>
-                    </tr>
-                    <tr>
-                        <td class="col-sm-8 col-md-6">
-                            <div class="media">
-                                <a class="thumbnail pull-left" href="#">
-                                    <img class="media-object" src="http://placehold.it/72x72/e0e0e0" style="width: 72px; height: 72px;" />
-                                </a>
-                                <div class="media-body">
-                                    <h4 class="media-heading"><a href="#">Product name</a></h4>
-                                    <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla adipiscing tempor ornare. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac ...</small></p>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="col-sm-1 col-md-1 text-center" style="vertical-align: middle;"><strong>110.87 EUR</strong></td>
-                        <td class="col-sm-1 col-md-1 text-center" style="vertical-align: middle;">76x</td>
-                    </tr>
-                    <tr>
-                        <td class="col-sm-8 col-md-6">
-                            <div class="media">
-                                <a class="thumbnail pull-left" href="#">
-                                    <img class="media-object" src="http://placehold.it/72x72/e0e0e0" style="width: 72px; height: 72px;" />
-                                </a>
-                                <div class="media-body">
-                                    <h4 class="media-heading"><a href="#">Product name</a></h4>
-                                    <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla adipiscing tempor ornare. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac ...</small></p>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="col-sm-1 col-md-1 text-center" style="vertical-align: middle;"><strong>110.87 EUR</strong></td>
-                        <td class="col-sm-1 col-md-1 text-center" style="vertical-align: middle;">76x</td>
-                    </tr>
-                    <tr>
-                        <td class="col-sm-8 col-md-6">
-                            <div class="media">
-                                <a class="thumbnail pull-left" href="#">
-                                    <img class="media-object" src="http://placehold.it/72x72/e0e0e0" style="width: 72px; height: 72px;" />
-                                </a>
-                                <div class="media-body">
-                                    <h4 class="media-heading"><a href="#">Product name</a></h4>
-                                    <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla adipiscing tempor ornare. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac ...</small></p>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="col-sm-1 col-md-1 text-center" style="vertical-align: middle;"><strong>110.87 EUR</strong></td>
-                        <td class="col-sm-1 col-md-1 text-center" style="vertical-align: middle;">76x</td>
-                    </tr>
+                            </td>
+                            <td class="col-sm-1 col-md-1 text-center" style="vertical-align: middle;"><strong>&#163; {{$deal['price']}}</strong></td>
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>
