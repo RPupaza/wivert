@@ -14,6 +14,7 @@
 
 
 Route::get('/{hotspot}', 'IndexController@index');
+Route::get('/{hotspot}/{category}', 'IndexController@getCateg');
 Route::get('/{hotspot}/adverts/{advert}', 'AdvertsController@getAdvert');
 Route::get('{hotspot}/adverts/{advert}/deals/{name}', 'DealsController@getDeal');
 Route::get('{hotspot}/register', 'UsersController@getRegister');

@@ -19,7 +19,7 @@
     <!-- Logo -->
     <div class="logo">
         {{-- <img src="http://ads.wivert.net/dashboard/img/advert/{{$hp['img']}}"> --}}
-        <a href="index.html"><img src="/img/logos/{{$hp['img']}}"></a>
+        <a href="/{{$hotspot}}"><img src="/img/logos/{{$hp['img']}}"></a>
     </div>
     <!-- /Logo -->
     <!-- Static navbar -->

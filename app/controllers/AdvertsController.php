@@ -5,9 +5,9 @@ class AdvertsController extends BaseController{
     public function getAdvert($hotspot, $advert){
 
         $hp = Hotspot::where('name', '=', $hotspot)->first();
-        $adv = Advert::join('advertisers', 'adverts.advertiser', '=', 'advertisers.id')->where('adverts.name','=',$advert)->first();
+        $adv = Advert::join('advertisers', 'adverts.advertiser', '=', 'advertisers.id')->select('adverts.*', 'advertisers.fullname', 'advertisers.email')->where('adverts.name','=',$advert)->first();
         $deals = Deal::where('advert', '=', $adv['id'])->get();
-       // dd($deals);
+        // dd($adv['id']);
         if ($hp == NULL)
         {
             $hp = Hotspot::find(1);
