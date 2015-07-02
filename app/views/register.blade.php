@@ -63,8 +63,8 @@
     </div>
     <div class="col-lg-9 content-right">
         <ol class="breadcrumb">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="signUp.html">Sign Up</a></li>
+            <li><a href="{{url($hotspot)}}">Home</a></li>
+            <li><a href="{{url($hotspot.'/register')}}">Registration</a></li>
         </ol>
         <h2>Sign Up</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet porta eros, eget facilisis arcu. Duis condimentum fermentum enim, ac rutrum erat venenatis vel. Morbi pharetra viverra faucibus.</p>
@@ -72,7 +72,38 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="well">
-                    {{ Form::open(array('url'=>$hotspot.'/register', 'role'=>'form')) }}
+                    {{ Form::open(array('url'=>'https://arad.wivert.net/Payment', 'role'=>'form', 'name'=>'ccpay')) }}
+                    <input type="hidden" name="Page" value="CheckUser">
+                    <input type="hidden" name="Template" value="PaymentCheckUserResult.hts">
+                    <input type="hidden" name="HistoryBack" value="1">
+                    <input type="hidden" name="BuyItAction" value="CreateUserPayAuthorize">
+                    <input name="DoItText" type="hidden" value="Sign Up">
+                    <input type="hidden" name="Portal" value="Shed">
+                    <input type="hidden" name="uamport" value="">
+                    <input type="hidden" name="uamip" value="">
+                    <input type="hidden" name="nasid" value="">
+                    <input type="hidden" name="chal" value="">
+                    <input type="hidden" name="CIP" value="10.20.2.11">
+                    <input type="hidden" name="CPORT" value="8080">
+                    <input type="hidden" name="UIP" value="">
+                    <input type="hidden" name="AP_IP" value="">
+                    <input type="hidden" name="AP_MAC" value="">
+                    <input type="hidden" name="CLIENT_IP" value="">
+                    <input type="hidden" name="CLIENT_MAC" value="">
+                    <input type="hidden" name="FIRST_URL" value="">
+                    <input type="hidden" name="URL" value="">
+                    <input type="hidden" name="OS" value="">
+                    <input type="hidden" name="redirurl" value="">
+                    <input type="hidden" name="AP" value="">
+                    <input type="hidden" name="sip" value="">
+                    <input type="hidden" name="uip" value="">
+                    <input type="hidden" name="lid" value="">
+                    <input type="hidden" name="mac" value="">
+                    <input type="hidden" name="url" value="">
+                    <input type="hidden" name="MT_Error" value="">
+                    <input type="hidden" name="LinkPoint" value="">
+                    <input type="hidden" name="FullName" value="">
+                    <input type="hidden" name="qdb_$N$ItemIndex" value="5">
                  {{--   <form action="#" method="post" role="form">--}}
                         <div class="form-group">
                             <div class="row">
@@ -83,16 +114,28 @@
                                 </ul>
                             </div>
                         </div>
+                    <div class="form-group">
+                        {{ Form::text('UserName', null, array('class'=>'form-control', 'placeholder'=>'UserName', 'type'=>'text')) }}
+                        {{--<input class="form-control" name="youremail" placeholder="Your email" type="email" />--}}
+                    </div>
+                    <div class="form-group">
+                        {{ Form::text('FirstName', null, array('class'=>'form-control', 'placeholder'=>'FirstName', 'type'=>'text')) }}
+                        {{--<input class="form-control" name="youremail" placeholder="Your email" type="email" />--}}
+                    </div>
+                    <div class="form-group">
+                        {{ Form::text('LastName', null, array('class'=>'form-control', 'placeholder'=>'LastName', 'type'=>'text')) }}
+                        {{--<input class="form-control" name="youremail" placeholder="Your email" type="email" />--}}
+                    </div>
                         <div class="form-group">
-                            {{ Form::text('email', null, array('class'=>'form-control', 'placeholder'=>'Email', 'type'=>'email')) }}
+                            {{ Form::text('Email', null, array('class'=>'form-control', 'placeholder'=>'Email', 'type'=>'email')) }}
                             {{--<input class="form-control" name="youremail" placeholder="Your email" type="email" />--}}
                         </div>
                         <div class="form-group">
-                            {{ Form::password('password', array('class'=>'form-control', 'placeholder'=>'Password')) }}
+                            {{ Form::password('Password', array('class'=>'form-control', 'placeholder'=>'Password')) }}
                             {{--<input class="form-control" name="password" placeholder="New password" type="password" />--}}
                         </div>
                         <div class="form-group">
-                            {{ Form::password('password_confirmation', array('class'=>'form-control', 'placeholder'=>'Re-enter new password', 'type'=>'password')) }}
+                            {{ Form::password('ConfirmPassword', array('class'=>'form-control', 'placeholder'=>'Re-enter new password', 'type'=>'password')) }}
                            {{-- <input class="form-control" name="reenterpassword" placeholder="Re-enter new password" type="password" />--}}
                         </div>
                     {{ Form::submit('Register', array('class'=>'btn btn-lg btn-primary btn-block'))}}

@@ -1,18 +1,22 @@
 <div class="col-lg-3 content-left">
-    <h4>Search</h4>
-    <div class="well well-sm">
-        <form>
-            <fieldset>
-                <input type="text" class="form-control" />
-                <small><a href="#" class="btn-advanced-search">Advanced</a></small>
-                <input type="submit" class="btn btn-danger btn-sm btn-search" value="Search" />
-            </fieldset>
-        </form>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-custom">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{$hotspot}} offers</h3>
+                    <span class="pull-right clickable panel-collapsed"><i class="glyphicon glyphicon-chevron-down"></i></span>
+                </div>
+                <div class="panel-body">Panel content <i class="glyphicon glyphicon-chevron-right"></i></div>
+                <div class="panel-body">Panel content <i class="glyphicon glyphicon-chevron-right"></i></div>
+                <div class="panel-body">Panel content <i class="glyphicon glyphicon-chevron-right"></i></div>
+                <div class="panel-body">Panel content <i class="glyphicon glyphicon-chevron-right"></i></div>
+            </div>
+        </div>
     </div>
     <h4>Categories</h4>
     <div class="list-group categories">
         @foreach($categories as $categ)
-            <a href="#" class="list-group-item">{{str_replace('-', ' ',$categ['name'])}} <span class="glyphicon glyphicon-chevron-right"></span></a>
+            <a href="{{url($hotspot.'/category/'.$categ['name'])}}" class="list-group-item">{{str_replace('-', ' ',$categ['name'])}} <span class="glyphicon glyphicon-chevron-right"></span></a>
         @endforeach
     </div>
     <h4>Newest Deals</h4>

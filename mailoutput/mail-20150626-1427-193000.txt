@@ -1,0 +1,25 @@
+To: pupazarobert@wivert.co.uk
+Subject: Welcome to the Laravel 4 Auth App!
+Message-ID: <5188155a21a218117b363c4b94ac5b91@localhost>
+Date: Fri, 26 Jun 2015 14:27:34 +0000
+From: email test <info@wivert.co.uk>
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html lang=3D"en-US">
+=09<head>
+=09=09<meta charset=
+=3D"utf-8">
+=09</head>
+=09<body>
+=09=09<h2>Password Reset</h2>
+
+=
+=09=09<div>
+=09=09=09To reset your password, complete this form: .
+=09=
+=09</div>
+=09</body>
+</html>

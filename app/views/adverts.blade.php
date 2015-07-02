@@ -9,8 +9,8 @@
 <div class="row content">
     <div class="col-lg-12">
         <ol class="breadcrumb">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="{{url($hotspot)}}">Home</a></li>
+            <li><a href="#">{{$advs['name']}}</a></li>
         </ol>
         <h2>Contact</h2>
         <div class="row">

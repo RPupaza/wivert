@@ -1,16 +1,11 @@
 <?php
 
-class IndexController extends BaseController{
+class CategoryController extends BaseController{
 
-    public function index($hotspot){
-
-
-
-      /* Mail::send('emails.deals.promoCode', array('firstname'=>'Ehsan'), function($message) {
-            $message->to('ehsan@wivert.co.uk')->subject('Here will be the voucher email !');
-        });*/
+    public function getCateg($hotspot, $category){
 
         $hp = Hotspot::where('name', '=', $hotspot)->first();
+
         if ($hp == NULL)
         {
             $hp = Hotspot::find(1);
@@ -24,42 +19,42 @@ class IndexController extends BaseController{
 
         $categ = Category::where('id','<>',$hp['category'])->get();
 
+        $cat_name = Category::where('name','=',$category)->select('id')->first();
+
         $banner = Advert::where('priority','=', 1)
-            ->where('category','<>',$hp['category'])
+            ->where('category','=',$cat_name['id'])
             ->where('city', '=', $hp['city'])
             ->select('name','image')
             ->take(5)
             ->get();
 
         $recommand = Advert::where('priority','=', 2)
-            ->where('category','<>',$hp['category'])
+            ->where('category','=',$cat_name['id'])
             ->where('city', '=', $hp['city'])
             ->select('name','image')
             ->take(10)
             ->get();
 
         $silver = Advert::where('priority','=', 3)
-            ->where('category','<>',$hp['category'])
+            ->where('category','=',$cat_name['id'])
             ->where('city', '=', $hp['city'])
             ->select('name','image')
             ->take(15)
             ->get();
 
         $bronze = Advert::where('priority','=', 4)
-            ->where('category','<>',$hp['category'])
+            ->where('category','=',$cat_name['id'])
             ->where('city', '=', $hp['city'])
             ->select('name','image')
             ->take(20)
             ->get();
 
         $footer = Advert::where('priority','=', 5)
-            ->where('category','<>',$hp['category'])
+            ->where('category','=',$cat_name['id'])
             ->where('city', '=', $hp['city'])
             ->select('name','image')
             ->take(5)
             ->get();
-       // print_r($banner);
-
 
         if(Auth::check()){
             $usr_exists = User::where('email', '=', Auth::user()->email)->where('hotspot','=',$hp['id'])->first();
@@ -83,8 +78,5 @@ class IndexController extends BaseController{
             ->with('bronze',$bronze)
             ->with('footer',$footer);
     }
-
-
-
 
 }

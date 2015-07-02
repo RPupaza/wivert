@@ -15,7 +15,10 @@ class UsersController extends BaseController
         {
             $hp = Hotspot::find(1);
         }
-        return View::make('register')->with('hotspot', $hotspot)->with('hp',$hp);
+
+        return View::make('register')
+            ->with('hotspot', $hotspot)
+            ->with('hp',$hp);
     }
 
     public function create($hotspot)

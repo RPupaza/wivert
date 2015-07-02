@@ -2,20 +2,21 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CodesTable extends Migration {
+class PurchasesTable extends Migration {
 
 	/**
 	 * Run the migrations.
 	 *
 	 * @return void
-	 */
+     */
     public function up()
     {
-        Schema::create('codes', function($table) {
+        Schema::create('purchases', function($table) {
             $table->increments('id');
+            $table->string('email', 100);
             $table->string('code', 100);
-            $table->integer('deal')->unsigned();
-            $table->integer('available')->unsigned();
+            $table->string('transaction_id', 100);
+            $table->float('price')->unsigned();
             $table->timestamps();
         });
     }
@@ -27,8 +28,7 @@ class CodesTable extends Migration {
      */
     public function down()
     {
-        Schema::drop('codes');
+        Schema::drop('purchases');
     }
-
 
 }

@@ -9,6 +9,8 @@
     <link href="/css/bootstrap.css" rel="stylesheet" media="screen">
     <link href="/css/czsale.css" rel="stylesheet" media="screen">
     <link href="/css/czsale-responsive.css" rel="stylesheet" media="screen">
+    <link href="/css/style.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="/css/hotspot/{{$hotspot}}.css">
     @yield('head-tag')
 </head>
 <body>
@@ -36,7 +38,7 @@
           {{--  <a href="addClassified.html" class="btn btn-success navbar-btn add-classified-btn navbar-left" role="button">Add classified</a>--}}
 
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
+                {{--<li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="index.html">Home page</a></li>
@@ -48,8 +50,8 @@
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="signUp.html">Sign Up</a></li>
                     </ul>
-                </li>
-                <li><a href="help.html">Help</a></li>
+                </li>--}}
+              {{--  <li><a href="help.html">Help</a></li>--}}
                 @if(!Auth::check())
                     <li>{{ HTML::link($hotspot.'/register', 'Register') }}</li>
                     <li class="dropdown">
@@ -58,11 +60,11 @@
                             <li>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        {{ Form::open(array('url'=>'/'.$hotspot, 'class'=>'form', 'id'=>'login-nav', 'role'=>'form')) }}
+                                        {{ Form::open(array('url'=>'http://wireless.wivert.net/login', 'class'=>'form', 'id'=>'login-nav', 'role'=>'form')) }}
                                         {{-- <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">--}}
                                         <div class="form-group">
                                             <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                            {{ Form::text('email', null, array('class'=>'form-control', 'placeholder'=>'Email Address')) }}
+                                            {{ Form::text('username', null, array('class'=>'form-control', 'placeholder'=>'Username')) }}
                                             {{--  <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>--}}
                                         </div>
                                         <div class="form-group">

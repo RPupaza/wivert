@@ -14,7 +14,7 @@
 
 
 Route::get('/{hotspot}', 'IndexController@index');
-Route::get('/{hotspot}/{category}', 'IndexController@getCateg');
+Route::get('/{hotspot}/category/{category}', 'CategoryController@getCateg');
 Route::get('/{hotspot}/adverts/{advert}', 'AdvertsController@getAdvert');
 Route::get('{hotspot}/adverts/{advert}/deals/{name}', 'DealsController@getDeal');
 Route::get('{hotspot}/register', 'UsersController@getRegister');
@@ -29,3 +29,13 @@ Route::get('/', function(){
     return Redirect::to('/wivert');
 });
 Route::post('/{hotspot}', 'UsersController@doLogin');
+
+Route::post('/{hotspot}/payment', array(
+    'as' => '{hotspot}.payment',
+    'uses' => 'PaypalController@postPayment',
+));
+
+// this is after make the payment, PayPal redirect back to your site
+Route::post('{hotspot}/payment/status', array('uses'=> 'PaypalController@getPayment'));
+Route::post('{hotspot}/payment/prepayment', array('uses'=> 'PaypalController@prePayment'));
+

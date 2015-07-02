@@ -20,6 +20,7 @@ class AdvertsTable extends Migration {
             $table->string('address', 300);
             $table->string('image', 300);
             $table->integer('advertiser')->unsigned();
+            $table->integer('priority')->unsigned();
             $table->timestamps();
         });
     }

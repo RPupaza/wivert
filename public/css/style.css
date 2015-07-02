@@ -1,0 +1,37 @@
+
+.clickable{
+    cursor: pointer;
+}
+
+.panel-heading span {
+    margin-top: -20px;
+    font-size: 15px;
+}
+.panel-custom .panel-body{
+    padding: 10px 15px;
+    display: none;
+}
+.panel-custom{
+    /*border-color: #d9534f;*/
+    border-color: #E17572;
+}
+.panel-custom > .panel-heading{
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #E17572;
+}
+.panel-title{
+    font-weight: normal;
+}
+.panel-body i{
+    float:right;
+}
+.panel .panel-body{
+    border-bottom:1px solid #E17572;
+}
+.panel .panel-body:last-child{
+    border-bottom:none;
+}
+.status-page span{
+    color:#d9534f;
+}

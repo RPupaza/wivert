@@ -16,6 +16,8 @@ class HotspotsTable extends Migration {
             $table->string('name', 100);
             $table->bigInteger('time')->unsigned();
             $table->integer('status')->unsigned();
+            $table->integer('category')->unsigned();
+            $table->integer('city')->unsigned();
             $table->integer('auth')->unsigned();
             $table->string('img', 250);
             $table->timestamps();

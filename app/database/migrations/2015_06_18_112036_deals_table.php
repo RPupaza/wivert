@@ -16,7 +16,6 @@ class DealsTable extends Migration {
             $table->string('name', 100);
             $table->string('description', 300);
             $table->float('price')->unsigned();
-            $table->integer('available')->unsigned();
             $table->string('image', 300);
             $table->integer('advert')->unsigned();
             $table->timestamps();
