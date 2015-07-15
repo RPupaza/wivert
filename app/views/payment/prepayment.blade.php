@@ -10,7 +10,7 @@
 <input type="hidden" name="currency_code" value="{{$details['item_currency']}}">
 <input type="hidden" name="amount" value="{{$details['item_price']}}">
 <input type="hidden" name="notify_url" value="{{url($details['hotspot'].'/payment/status')}}">
-<input type="hidden" name="custom" value="{{$details['sender_email']}},{{$details['code']}}">
+<input type="hidden" name="custom" value="{{$details['sender_email']}},{{$details['template']}},{{$details['pdf']}}">
 <input type="hidden" name="return"
        value="{{url($details['hotspot'].'/payment/status')}}">
 <input type="hidden" name="cancel_return"

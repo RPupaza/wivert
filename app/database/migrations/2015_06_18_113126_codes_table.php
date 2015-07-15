@@ -13,7 +13,8 @@ class CodesTable extends Migration {
     {
         Schema::create('codes', function($table) {
             $table->increments('id');
-            $table->string('code', 100);
+            $table->string('code_template', 200);
+            $table->string('code_pdf', 200);
             $table->integer('deal')->unsigned();
             $table->integer('available')->unsigned();
             $table->timestamps();

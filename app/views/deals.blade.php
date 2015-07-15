@@ -41,8 +41,11 @@
                         <tr>
                             <td>Status</td>
 
-                            <td>Available</td>
-
+                            @if($isAvailable == true)
+                                <td><span class="text-success">Available</span></td>
+                            @else
+                                <td><span class="text-danger">Sold Out</span></td>
+                            @endif
                         </tr>
                         <tr>
                             <td>Payments</td>
@@ -76,30 +79,34 @@
             <div class="row">
                 <div class="col-md-12">
                     <h4>Buy product</h4>
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            {{ Form::open(array('url'=>$hotspot.'/payment/prepayment', 'class'=>'form', 'id'=>'payment', 'role'=>'form')) }}
-                            <input type="hidden" name="cmd" value="_xclick">
-                            <!--<input type="hidden" name="business" value="wivert_paypal@wivert.co.uk"> -->
-                           {{-- <input type="hidden" name="at"
-                                   value=" -djd-t8a-Lzw5MzWS8Mg2yUxuhwnPPgj6y9xSxfFHvxwcnpI3gEZ1rz96ei">--}}
-                            <input type="hidden" name="business" value="robert-bussiness@wivert.co.uk">
-                            <input type="hidden" name="item_name" value="{{str_replace('-', ' ',$deal->name)}}">
-                            <input type="hidden" name="currency_code" value="GBP">
-                            <input type="hidden" name="amount" value="{{$deal->price}}">
-                            <input type="hidden" name="notify_url" value="{{url($hotspot.'/payment/status')}}">
-                            <input type="hidden" name="return"
-                                   value="{{url($hotspot.'/payment/status')}}">
-                            <input type="hidden" name="cancel_return"
-                                   value="{{url($hotspot.'/payment/status')}}">
-                            <div class="form-group">
-                                    <label for="InputEmail">Email address</label>
-                                    {{ Form::text('custom', null, array('class'=>'form-control', 'placeholder'=>'Email Address')) }}
-                                </div>
-                            {{ Form::submit('Buy', array('class'=>'btn btn-success btn-block'))}}
-                            {{ Form::close() }}
+                    @if($isAvailable == true)
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                {{ Form::open(array('url'=>$hotspot.'/payment/prepayment', 'class'=>'form', 'id'=>'payment', 'role'=>'form')) }}
+                                <input type="hidden" name="cmd" value="_xclick">
+                                <!--<input type="hidden" name="business" value="wivert_paypal@wivert.co.uk"> -->
+                               {{-- <input type="hidden" name="at"
+                                       value=" -djd-t8a-Lzw5MzWS8Mg2yUxuhwnPPgj6y9xSxfFHvxwcnpI3gEZ1rz96ei">--}}
+                                <input type="hidden" name="business" value="robert-bussiness@wivert.co.uk">
+                                <input type="hidden" name="item_name" value="{{str_replace('-', ' ',$deal->name)}}">
+                                <input type="hidden" name="currency_code" value="GBP">
+                                <input type="hidden" name="amount" value="{{$deal->price}}">
+                                <input type="hidden" name="notify_url" value="{{url($hotspot.'/payment/status')}}">
+                                <input type="hidden" name="return"
+                                       value="{{url($hotspot.'/payment/status')}}">
+                                <input type="hidden" name="cancel_return"
+                                       value="{{url($hotspot.'/payment/status')}}">
+                                <div class="form-group">
+                                        <label for="InputEmail">Email address</label>
+                                        {{ Form::text('custom', null, array('class'=>'form-control', 'placeholder'=>'Email Address')) }}
+                                    </div>
+                                {{ Form::submit('Buy', array('class'=>'btn btn-success btn-block'))}}
+                                {{ Form::close() }}
+                            </div>
                         </div>
-                    </div>
+                    @else
+                            <p class="alert alert-danger txt-center">This item is not available anymore due to SOLD OUT.</p>
+                    @endif
                 </div>
             </div>
         </div>

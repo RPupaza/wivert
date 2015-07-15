@@ -14,7 +14,8 @@ class PurchasesTable extends Migration {
         Schema::create('purchases', function($table) {
             $table->increments('id');
             $table->string('email', 100);
-            $table->string('code', 100);
+            $table->string('code_template', 200);
+            $table->string('code_pdf', 200);
             $table->string('transaction_id', 100);
             $table->float('price')->unsigned();
             $table->timestamps();

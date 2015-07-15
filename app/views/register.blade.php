@@ -73,37 +73,24 @@
             <div class="col-lg-12">
                 <div class="well">
                     {{ Form::open(array('url'=>'https://arad.wivert.net/Payment', 'role'=>'form', 'name'=>'ccpay')) }}
-                    <input type="hidden" name="Page" value="CheckUser">
-                    <input type="hidden" name="Template" value="PaymentCheckUserResult.hts">
-                    <input type="hidden" name="HistoryBack" value="1">
-                    <input type="hidden" name="BuyItAction" value="CreateUserPayAuthorize">
-                    <input name="DoItText" type="hidden" value="Sign Up">
-                    <input type="hidden" name="Portal" value="Shed">
-                    <input type="hidden" name="uamport" value="">
-                    <input type="hidden" name="uamip" value="">
-                    <input type="hidden" name="nasid" value="">
-                    <input type="hidden" name="chal" value="">
-                    <input type="hidden" name="CIP" value="10.20.2.11">
+
+                    <input name="Page" type="hidden" value="CreateUserPayAuthorize">
+
                     <input type="hidden" name="CPORT" value="8080">
-                    <input type="hidden" name="UIP" value="">
-                    <input type="hidden" name="AP_IP" value="">
-                    <input type="hidden" name="AP_MAC" value="">
-                    <input type="hidden" name="CLIENT_IP" value="">
-                    <input type="hidden" name="CLIENT_MAC" value="">
-                    <input type="hidden" name="FIRST_URL" value="">
-                    <input type="hidden" name="URL" value="">
-                    <input type="hidden" name="OS" value="">
-                    <input type="hidden" name="redirurl" value="">
-                    <input type="hidden" name="AP" value="">
-                    <input type="hidden" name="sip" value="">
-                    <input type="hidden" name="uip" value="">
-                    <input type="hidden" name="lid" value="">
-                    <input type="hidden" name="mac" value="">
-                    <input type="hidden" name="url" value="">
+
+                    <input type="hidden" name="redirurl" value="https://www.google.co.uk/?gfe_rd=cr&ei=yLybVf2DJtCSoQfQwoHQDw&gws_rd=ssl">
+
                     <input type="hidden" name="MT_Error" value="">
-                    <input type="hidden" name="LinkPoint" value="">
-                    <input type="hidden" name="FullName" value="">
-                    <input type="hidden" name="qdb_$N$ItemIndex" value="5">
+
+                    <!--// From ITEMS //-->
+                    <input name="Desc" type="hidden" value="Free Account">
+                    <input name="Price" type="hidden" value="0.00">
+                    <input name="Amount" type="hidden" value="0.00">
+                    <input name="CurrencyId" type="hidden" value="">
+                    <input name="ItemName" type="hidden" value="Fre Account">
+                    <input name="RequestNamePrefix" type="hidden" value="Meetering">
+                    <!--// From *PersonalDetails //-->
+
                  {{--   <form action="#" method="post" role="form">--}}
                         <div class="form-group">
                             <div class="row">

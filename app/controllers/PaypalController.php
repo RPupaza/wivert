@@ -19,7 +19,7 @@ class PaypalController extends BaseController
 
         $deal = Deal::leftJoin('codes','codes.deal','=','deals.id')
             ->leftJoin('adverts','adverts.id','=','deals.advert')
-            ->select('deals.name AS deal','codes.code', 'adverts.name AS advert')
+            ->select('deals.name AS deal', 'codes.code_template AS template', 'codes.code_pdf AS pdf', 'adverts.name AS advert')
             ->where('deals.name','=', str_replace(' ', '-',$item_name))
             ->where('codes.available','=', 1)
             ->first();
@@ -45,7 +45,8 @@ class PaypalController extends BaseController
                            'reciever_email' => $reciever_email,
                            'sender_email' => $sender_email,
                            'hotspot' => $hotspot,
-                           'code' => $deal['code']
+                           'template' => $deal['template'],
+                           'pdf' => $deal['pdf'],
                                            );
             return View::make('payment.prepayment')->with('details', $array);
         }
@@ -139,13 +140,15 @@ class PaypalController extends BaseController
             $payer_email = $_POST['payer_email'];
             $custom = explode(",",$_POST['custom']);
             $sender_email = $custom[0];
-            $code = $custom[1];
+            $template = $custom[1];
+            $pdf = $custom[2];
 
             $deal = Deal::leftJoin('codes','codes.deal','=','deals.id')
-                ->select('deals.name','codes.code')
+                ->select('deals.name','codes.code_template AS template', 'codes.code_pdf AS pdf')
                 ->where('deals.name','=', str_replace(' ', '-',$item_name))
                 ->where('codes.available','=', 1)
-                ->where('codes.code','=', $code)
+                ->where('codes.code_template','=', $template)
+                ->where('codes.code_pdf','=', $pdf)
                 ->first();
             //var_dump($custom[0]);
 
@@ -154,19 +157,23 @@ class PaypalController extends BaseController
 
                 $purchase = new Purchase;
                 $purchase->email = $sender_email;
-                $purchase->code = $deal['code'];
+                $purchase->code_template = $deal['template'];
+                $purchase->code_pdf = $deal['pdf'];
                 $purchase->transaction_id = $txn_id;
                 $purchase->price = $payment_amount;
                 $purchase->created_at = $date;
                 $purchase->updated_at = $date;
                 $purchase->save();
 
-                $code = Code::where('code', '=',$deal['code'])->first();
+                $code = Code::where('code_template', '=',$deal['template'])
+                              ->where('code_pdf', '=',$deal['pdf'])
+                              ->first();
                 $code->available = 0;
                 $code->updated_at = $date;
                 $code->save();
-                 Mail::send('emails.deals.promoCode', $data = array('code'=>$deal['code'], 'sender'=> $sender_email), function($message) use ($data) {
-                    $message->to($data['sender'])->subject('Here will be the voucher email !'.$data['code']);
+                 Mail::send('emails.deals.promoCode', $data = array('template'=>$deal['template'], 'pdf'=>$deal['pdf'], 'sender'=> $sender_email), function($message) use ($data) {
+                     $message->attach('https://arad.wivert.net/emails/'.$data['pdf']);
+                     $message->to($data['sender'])->subject('WiVert Coupon');
                  });
                 }
                 $exp_date = $date->add(new DateInterval("P1M"));

@@ -43,9 +43,15 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($deals as $deal)
+
+                    @foreach($deals as $key => $deal)
                         <tr>
                             <td class="col-sm-8 col-md-6">
+                                @if ($availability[$key] == '')
+
+                                    <span class="sold-wraper"></span>
+                                    <div class="ribbon-wrapper-green"><div class="ribbon-green">SOLD OUT</div></div>
+                                @endif
                                 <div class="media">
                                     <a class="thumbnail pull-left" href="{{url($hotspot.'/adverts/'.$advs['name'].'/deals/'.$deal['name'])}}">
                                         <img class="media-object" src="/img/deals/thumb/{{$deal['image']}}" style="width: 72px; height: 72px;" />
@@ -56,7 +62,11 @@
                                     </div>
                                 </div>
                             </td>
-                            <td class="col-sm-1 col-md-1 text-center" style="vertical-align: middle;"><strong>&#163; {{$deal['price']}}</strong></td>
+                            <td class="col-sm-1 col-md-1 text-center" style="vertical-align: middle;"><strong>&#163; {{$deal['price']}}</strong>
+                                @if ( $availability[$key] == '')
+                                    <span class="sold-wraper"></span>
+                                @endif
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>
