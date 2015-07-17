@@ -29,7 +29,14 @@ class DealsController extends BaseController{
             ->where('deal','=',$deal->id)
             ->where('available','=',1)
             ->exists();
-        //var_dump($code);
+
+        $comments = Comment::where('deal','=',$deal->id)->get();
+        $hasComments = count($comments);
+        $rate = Comment::where('deal','=',$deal->id)->avg('rate');
+        //var_dump($rate);
+        $rate = round($rate);
+        //var_dump(count($comments));
+        //var_dump($rate);
         if ($deal == NULL){
            return Redirect::to('/'.$hotspot.'/adverts/'.$advert_name)
                ->with('message','No deal was found !')
@@ -45,6 +52,9 @@ class DealsController extends BaseController{
                 ->with('adv',$advert_name)
                 ->with('categories',$categ)
                 ->with('news',$news)
+                ->with('comments',$comments)
+                ->with('hasComments',$hasComments)
+                ->with('rate',$rate)
                 ->with('isAvailable',$code);
         }
     }

@@ -24,6 +24,10 @@ Route::post('{hotspot}/register', array('uses'=> 'UsersController@create'));
 
 Route::get('authors', 'AuthorsController@home');
 
+Route::get('/{hotspot}/visited/{advert}', 'VisitedController@visit');
+
+Route::post('/{hotspot}/comments', 'CommentsController@comment');
+
 
 Route::get('/', function(){
     return Redirect::to('/wivert');

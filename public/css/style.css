@@ -49,7 +49,25 @@ ribbon*/
     right: -17%;
     z-index: 1000;
 }
-
+.error{
+    display: none;
+}
+.comments-wrap{
+    background-color: #dddddd;
+    padding: 1%;
+    border-radius: 5px;
+}
+.insert-rating-wrap{
+    display: none;
+}
+#add_comment, #show_comment{
+    cursor: pointer;
+    color:#777777;
+}
+.active_comment{
+    cursor:default !important;
+    color: inherit  !important;
+}
 .ribbon-green {
     font: bold 12px Sans-Serif;
     color: #333;

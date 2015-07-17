@@ -39,6 +39,28 @@
                             <td>&#163; {{$deal->price}}</td>
                         </tr>
                         <tr>
+                            <td>Raiting</td>
+                            <td>@for($i = 1; $i <= $rate; $i++)
+                                    <script>
+                                        $(document).ready(function(){
+                                            var i = '{{$i}}';
+                                            var id = '{{$rate}}';
+                                            $('.total-rates-'+ id).find('#'+i+'.rated').addClass('rate-btn-hover');
+                                        });
+                                    </script>
+                                @endfor
+
+
+                                <div class="rates total-rates-{{$rate}} total-rate rate-ex3-cnt">
+                                    <div id="1" class="rated "></div>
+                                    <div id="2" class="rated "></div>
+                                    <div id="3" class="rated  "></div>
+                                    <div id="4" class="rated  "></div>
+                                    <div id="5" class="rated  "></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
                             <td>Status</td>
 
                             @if($isAvailable == true)
@@ -98,7 +120,7 @@
                                        value="{{url($hotspot.'/payment/status')}}">
                                 <div class="form-group">
                                         <label for="InputEmail">Email address</label>
-                                        {{ Form::text('custom', null, array('class'=>'form-control', 'placeholder'=>'Email Address')) }}
+                                        {{ Form::text('custom', null, array('class'=>'form-control', 'required' => 'required', 'placeholder'=>'Email Address')) }}
                                     </div>
                                 {{ Form::submit('Buy', array('class'=>'btn btn-success btn-block'))}}
                                 {{ Form::close() }}
@@ -108,6 +130,72 @@
                             <p class="alert alert-danger txt-center">This item is not available anymore due to SOLD OUT.</p>
                     @endif
                 </div>
+
+                <div class="col-md-12">
+                    <h4><span id="show_comment" class="active_comment">Comments</span> / <span id="add_comment" class="">Add</span></h4>
+                    <div class="well">
+                        <div class="input-group insert-rating-wrap">
+                            <p class="alert alert-danger txt-center error">Fill all the fields !</p>
+                            <p id="success" class="alert alert-success txt-center error">Thank you for your comment !</p>
+                            {{ Form::open(array('url'=>$hotspot.'/', 'class'=>'form', 'id'=>'payment', 'role'=>'form')) }}
+
+                            <input type="hidden" id="hotspot" value="{{$hotspot}}">
+                            <input type="hidden" id="deal" value="{{$deal->id}}">
+                            <div class="form-group">
+                                {{ Form::text('commentUser', null, array('class'=>'form-control chat-input', 'id' => 'commentUser', 'placeholder'=>'Your Name')) }}
+                            </div>
+                            <div class="form-group">
+                                {{ Form::text('commentText', null, array('class'=>'form-control chat-input', 'id' => 'commentText', 'placeholder'=>'Write your message here...')) }}
+                            </div>
+                            <div class="form-group">
+                                <div class="rate-ex1-cnt">
+                                    <div id="1" class="rate-btn-1 rate-btn rate-btn-hover"></div>
+                                    <div id="2" class="rate-btn-2 rate-btn"></div>
+                                    <div id="3" class="rate-btn-3 rate-btn"></div>
+                                    <div id="4" class="rate-btn-4 rate-btn"></div>
+                                    <div id="5" class="rate-btn-5 rate-btn"></div>
+                                </div>
+                            </div>
+                            <span class="input-group-btn">
+                                <a href="#" class="btn btn-primary btn-sm rate-submit"><span class="glyphicon glyphicon-comment"></span> Add Comment</a>
+                            </span>
+                            {{ Form::close() }}
+                        </div>
+
+                        <ul data-brackets-id="12674" id="sortable" class="list-unstyled ui-sortable comments-wrap">
+
+                            @if($hasComments == 0)
+                                <li><p class="alert alert-success txt-center">Be the first to rate & comment on this product !</p></li>
+                            @endif
+                            @foreach($comments as $comment)
+                                <strong class="pull-left primary-font">{{$comment['name']}}</strong>
+                                @for($i = 1; $i <= $comment['rate']; $i++)
+                                    <script>
+                                        $(document).ready(function(){
+                                            var i = '{{$i}}';
+                                            var id = '{{$comment['id']}}';
+                                            $('.rates-'+ id).find('#'+i+'.rated').addClass('rate-btn-hover');
+                                        });
+                                    </script>
+                                @endfor
+
+
+                                <div class="rates rates-{{$comment['id']}} rate-ex3-cnt">
+                                    <div id="1" class="rated "></div>
+                                    <div id="2" class="rated "></div>
+                                    <div id="3" class="rated  "></div>
+                                    <div id="4" class="rated  "></div>
+                                    <div id="5" class="rated  "></div>
+                                </div>
+                                <small class="pull-right text-muted">
+                                    <span class="glyphicon glyphicon-time"></span>{{date('F d, Y', strtotime($comment['created_at']))}}</small>
+                                </br>
+                                <li class="ui-state-default">{{$comment['text']}}</li>
+                                </br>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -115,3 +203,7 @@
 
 
 @stop
+@section('scripts')
+    <script src="/js/rating.js"></script>
+@stop
+

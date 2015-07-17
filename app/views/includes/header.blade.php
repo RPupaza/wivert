@@ -10,9 +10,11 @@
     <link href="/css/czsale.css" rel="stylesheet" media="screen">
     <link href="/css/czsale-responsive.css" rel="stylesheet" media="screen">
     <link href="/css/style.css" rel="stylesheet" media="screen">
+    <link href="/css/rating.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="/css/hotspot/{{$hotspot}}.css">
     @yield('head-tag')
 </head>
+<script src="/js/jquery-1.10.2.min.js"></script>
 <body>
 <div class="container wrapper">
          @if(Auth::check())

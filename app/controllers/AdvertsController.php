@@ -8,6 +8,8 @@ class AdvertsController extends BaseController{
         $adv = Advert::join('advertisers', 'adverts.advertiser', '=', 'advertisers.id')->select('adverts.*', 'advertisers.fullname', 'advertisers.email')->where('adverts.name','=',$advert)->first();
         $deals = Deal::where('advert', '=', $adv['id'])->get();
 
+        $available = false;
+
         foreach($deals as $key => $deal){
             $available[] = Code::where('deal', '=', $deal['id'])->where('available', '=', 1)->select('id')->exists();
         }
@@ -15,6 +17,8 @@ class AdvertsController extends BaseController{
         {
             $hp = Hotspot::find(1);
         }
+
+        //dd($available);
         if ($adv == NULL){
             return Redirect::to('/'.$hotspot)
                 ->with('message','STOP messing with the link !')

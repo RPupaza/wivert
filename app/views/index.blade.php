@@ -13,7 +13,7 @@
                 <h4>Featured</h4>
                 <div id="slides1">
                     @foreach($banner as $ban)
-                        <div><a href="{{url($hotspot.'/adverts/'.$ban['name'])}}"><img src="/img/slides/{{$ban['image']}}"></a></div>
+                        <div><a href="{{url($hotspot.'/visited/'.$ban['name'])}}"><img src="/img/slides/{{$ban['image']}}"></a></div>
                     @endforeach
                 </div>
                 @if(count($banner) == 0)
@@ -27,7 +27,7 @@
                             <div class="thumbnail">
                                <img src="/img/slides/{{$rec['image']}}" />
                                 <div class="caption">
-                                    <p><small><a href="{{url($hotspot.'/adverts/'.$rec['name'])}}">{{$rec['name']}}</a></small><p>
+                                    <p><small><a href="{{url($hotspot.'/visited/'.$rec['name'])}}">{{$rec['name']}}</a></small><p>
                                 </div>
                             </div>
                         </div>
@@ -45,7 +45,7 @@
                                 <div class="thumbnail">
                                     <img src="/img/slides/{{$slv['image']}}" />
                                     <div class="caption">
-                                        <p><small><a href="{{url($hotspot.'/adverts/'.$slv['name'])}}">{{$slv['name']}}</a></small><p>
+                                        <p><small><a href="{{url($hotspot.'/visited/'.$slv['name'])}}">{{$slv['name']}}</a></small><p>
                                     </div>
                                 </div>
                             </div>
@@ -64,7 +64,7 @@
                                 <div class="thumbnail">
                                     <img src="/img/slides/{{$brz['image']}}" />
                                     <div class="caption">
-                                        <p><small><a href="{{url($hotspot.'/adverts/'.$brz['name'])}}">{{$brz['name']}}</a></small><p>
+                                        <p><small><a href="{{url($hotspot.'/visited/'.$brz['name'])}}">{{$brz['name']}}</a></small><p>
                                     </div>
                                 </div>
                             </div>
@@ -77,7 +77,7 @@
                 <h4>Footer</h4>
                 <div id="slides2">
                     @foreach($footer as $ftr)
-                        <div><a href="{{url($hotspot.'/adverts/'.$ftr['name'])}}"><img src="/img/slides/{{$ftr['image']}}"></a></div>
+                        <div><a href="{{url($hotspot.'/visited/'.$ftr['name'])}}"><img src="/img/slides/{{$ftr['image']}}"></a></div>
                     @endforeach
                 </div>
                 @if(count($footer) == 0)
