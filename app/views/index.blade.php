@@ -134,7 +134,7 @@
                 responsive : {
                     // breakpoint from 0 up
                     0 : {
-                        items:1,
+                        items:2,
                         margin:0
 
                     },
@@ -165,7 +165,7 @@
                 responsive : {
                     // breakpoint from 0 up
                     0 : {
-                        items:1,
+                        items:2,
                         margin:0
 
                     },
@@ -196,7 +196,7 @@
                 responsive : {
                     // breakpoint from 0 up
                     0 : {
-                        items:1,
+                        items:2,
                         margin:0
 
                     },

@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c669fe05-7e09-4c46-bdb5-64daed722813" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/setting.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/setting2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/mobile.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/DealsController.php" afterPath="$PROJECT_DIR$/app/controllers/DealsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/UsersController.php" afterPath="$PROJECT_DIR$/app/controllers/UsersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/includes/footer.blade.php" afterPath="$PROJECT_DIR$/app/views/includes/footer.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/includes/header.blade.php" afterPath="$PROJECT_DIR$/app/views/includes/header.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/index.blade.php" afterPath="$PROJECT_DIR$/app/views/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/register.blade.php" afterPath="$PROJECT_DIR$/app/views/register.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/session.php" afterPath="$PROJECT_DIR$/app/config/session.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/includes/sidebar.blade.php" afterPath="$PROJECT_DIR$/app/views/includes/sidebar.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="wivert.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -91,8 +80,8 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.681338" vertical-offset="979" max-vertical-offset="3995">
-              <caret line="214" column="17" selection-start-line="214" selection-start-column="17" selection-end-line="214" selection-end-column="17" />
+            <state vertical-scroll-proportion="-0.10739437" vertical-offset="3427" max-vertical-offset="3995">
+              <caret line="198" column="31" selection-start-line="198" selection-start-column="31" selection-end-line="198" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -407,6 +396,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wivert" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wivert" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -884,8 +891,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.681338" vertical-offset="979" max-vertical-offset="3995">
-          <caret line="214" column="17" selection-start-line="214" selection-start-column="17" selection-end-line="214" selection-end-column="17" />
+        <state vertical-scroll-proportion="-0.10739437" vertical-offset="3427" max-vertical-offset="3995">
+          <caret line="198" column="31" selection-start-line="198" selection-start-column="31" selection-end-line="198" selection-end-column="31" />
           <folding />
         </state>
       </provider>
