@@ -1,4 +1,8 @@
-<div class="col-lg-3 content-left">
+<div class="col-lg-3 content-left sidebar-mobile">
+    <i class="setting">
+        <span></span>
+    </i>
+<div class="col-lg-12 mobile-body">
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-custom">
@@ -34,3 +38,13 @@
         @endforeach
     </div>
 </div>
+</div>
+<script>
+    $(document).ready(function(){
+        $('.setting').click(function(){
+            $('.mobile-body').animate({
+                width:"toggle"
+            });
+        });
+    });
+</script>

@@ -118,6 +118,7 @@
                 loop:true,
                 animateOut: 'fadeOut',
                 margin:10
+
             });
 
             $("#slide-gold").owlCarousel({
@@ -129,7 +130,27 @@
                 autoplayHoverPause:true,
                 lazyLoad:true,
                 loop:true,
-                margin:10
+                margin:10,
+                responsive : {
+                    // breakpoint from 0 up
+                    0 : {
+                        items:1,
+                        margin:0
+
+                    },
+                    // breakpoint from 480 up
+                    480 : {
+                        items:3,
+                        margin:0
+
+                    },
+                    // breakpoint from 768 up
+                    768 : {
+                        items:4,
+                        margin:0
+
+                    }
+                }
             });
             $("#slide-silver").owlCarousel({
                 dots: false,
@@ -140,7 +161,27 @@
                 autoplayHoverPause:true,
                 lazyLoad:true,
                 loop:true,
-                margin:10
+                margin:10,
+                responsive : {
+                    // breakpoint from 0 up
+                    0 : {
+                        items:1,
+                        margin:0
+
+                    },
+                    // breakpoint from 480 up
+                    480 : {
+                        items:3,
+                        margin:0
+
+                    },
+                    // breakpoint from 768 up
+                    768 : {
+                        items:4,
+                        margin:0
+
+                    }
+                }
             });
             $("#slide-bronze").owlCarousel({
                 dots: false,
@@ -151,7 +192,27 @@
                 autoplayHoverPause:true,
                 lazyLoad:true,
                 loop:true,
-                margin:10
+                margin:10,
+                responsive : {
+                    // breakpoint from 0 up
+                    0 : {
+                        items:1,
+                        margin:0
+
+                    },
+                    // breakpoint from 480 up
+                    480 : {
+                        items:3,
+                        margin:0
+
+                    },
+                    // breakpoint from 768 up
+                    768 : {
+                        items:4,
+                        margin:0
+
+                    }
+                }
             });
         });
     </script>

@@ -10,6 +10,13 @@ class UsersController extends BaseController
 
     public function getRegister($hotspot)
     {
+        $categ = Category::All();
+        $news = Deal::join('adverts','adverts.id','=','deals.advert')
+            ->select('deals.*', 'adverts.name AS advert_name')
+            ->take(10)
+            ->orderBy('deals.id', 'desc')
+            ->get();
+
         $hp = Hotspot::where('name', '=', $hotspot)->first();
         if ($hp == NULL)
         {
@@ -18,6 +25,8 @@ class UsersController extends BaseController
 
         return View::make('register')
             ->with('hotspot', $hotspot)
+            ->with('categories',$categ)
+            ->with('news',$news)
             ->with('hp',$hp);
     }
 

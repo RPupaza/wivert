@@ -1,0 +1,37 @@
+body{
+    padding:0;
+}
+
+.sidebar-mobile{
+    position: absolute;
+    z-index: 10000;
+    background: #fff;
+    border: 1px solid #ccc;
+    left:0;
+    top:100px;
+    max-width:265px;
+    padding:0;
+}
+.setting{
+    cursor: pointer;
+    position: absolute;
+    left: 100%;
+    z-index: 1;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-radius: 0 5px 5px 0;
+    top:-1px;
+    padding: 4px 5px 0 3px;
+}
+.setting span{
+    background-image: url('/img/setting2.png');
+    background-size: cover;
+    height: 15px;
+    width: 15px;
+    display: inline-block;
+}
+.mobile-body{
+    display: none;
+    padding: 7px 10px;
+}

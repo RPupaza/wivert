@@ -4,7 +4,7 @@ class DealsController extends BaseController{
 
     public function getDeal($hotspot, $advert_name ,$deal_name){
 
-        $news = Deal::join('adverts','adverts.id','=','deals.advert')
+        $news = Deal    ::join('adverts','adverts.id','=','deals.advert')
             ->select('deals.*', 'adverts.name AS advert_name')
             ->take(10)
             ->orderBy('deals.id', 'desc')

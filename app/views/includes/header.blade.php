@@ -11,6 +11,7 @@
     <link href="/css/czsale-responsive.css" rel="stylesheet" media="screen">
     <link href="/css/style.css" rel="stylesheet" media="screen">
     <link href="/css/rating.css" rel="stylesheet" media="screen">
+    <link href="/css/mobile.css" rel="stylesheet" media="(max-width: 1200px)" >
     <link rel="stylesheet" href="/css/hotspot/{{$hotspot}}.css">
     @yield('head-tag')
 </head>
