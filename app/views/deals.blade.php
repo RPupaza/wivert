@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="row">
-                        <div class="col-md-12 hidden-sm hidden-xs" id="slider-thumbs">
+                        <div class="col-md-12 " id="slider-thumbs">
                             <ul class="list-inline">
                                 <li><a id="carousel-selector-0" class="selected"><img src="/img/deals/{{$deal->image}}" class="img-responsive" /></a></li>
                                 </ul>
@@ -165,7 +165,7 @@
                         <ul data-brackets-id="12674" id="sortable" class="list-unstyled ui-sortable comments-wrap">
 
                             @if($hasComments == 0)
-                                <li><p class="alert alert-success txt-center">Be the first to rate & comment on this product !</p></li>
+                                <li><p class="alert alert-success txt-center comments-mobile-title">Be the first to rate & comment on this product !</p></li>
                             @endif
                             @foreach($comments as $comment)
                                 <strong class="pull-left primary-font">{{$comment['name']}}</strong>

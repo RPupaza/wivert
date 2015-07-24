@@ -35,3 +35,17 @@ body{
     display: none;
     padding: 7px 10px;
 }
+.rate-ex3-cnt.rates{
+    width: 50%;
+}
+.comments-wrap .comments-mobile-title{
+    width:100%;
+}
+.comments-wrap .ui-state-default{
+    float: left;
+    padding-bottom: 25px;
+    width: 100%;
+}
+.rate-ex3-cnt.rates.total-rate{
+    width:100%;
+}

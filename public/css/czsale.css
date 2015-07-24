@@ -24,6 +24,9 @@ a:hover {
 .logo img{
     width:85px;
 }
+.img-responsive{
+    width:100%;
+}
 
 .breadcrumb {
   background: none;
