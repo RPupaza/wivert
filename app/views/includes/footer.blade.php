@@ -15,7 +15,7 @@
         <div class="clearfix">&nbsp;</div>
     </div>
     <div class="pull-right">
-        <p class="text-muted"><small>Copyright &copy; 2013-2014, SenseMedia.cz - All Rights Reserved.</small></p>
+        <p class="text-muted"><small>Copyright &copy; 2015, <a href="http://wivert.co.uk/" target="_blank">WiVert limited</a> - All Rights Reserved.</small></p>
     </div>
 </div>
 </div>
