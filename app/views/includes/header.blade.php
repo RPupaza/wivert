@@ -13,10 +13,14 @@
     <link href="/css/rating.css" rel="stylesheet" media="screen">
     <link href="/css/mobile.css" rel="stylesheet" media="(max-width: 1200px)" >
     <link rel="stylesheet" href="/css/hotspot/{{$hotspot}}.css">
+    <link href="/css/animate.css" rel="stylesheet" media="screen">
     @yield('head-tag')
 </head>
 <script src="/js/jquery-1.10.2.min.js"></script>
+{{--<script src="/js/pace/pace.min.js"></script>--}}
 <body>
+{{--<div class="hide-everything"></div>--}}
+{{--<div class="pace"></div>--}}
 <div class="container wrapper">
          @if(Auth::check())
                 <p class="wellcome"><span>{{$hp['name']}}</span> welcomes you aboard <span>{{Auth::user()->email}}</span></p>

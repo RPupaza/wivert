@@ -79,6 +79,33 @@ a.list-subgroup-item:hover, a.list-subgroup-item.active, a.list-subgroup-item.ac
   border-color: #d43f3a;
 }
 
+.hide-everything{
+    position: absolute;
+    z-index: 10000000;
+    background: #fff;
+    top:0;
+    bottom: 0;
+    left:0;
+    right:0;
+}
+.pace .pace-activity{
+    z-index: 100000000;
+    display: block;
+    position: fixed;
+    top: 20%;
+    right: 50%;
+    width: 50px;
+    height: 50px;
+    border: solid 2px transparent;
+    border-top-color: #00acac;
+    border-left-color: #00acac;
+    border-radius: 64px;
+    -webkit-animation: pace-spinner 400ms linear infinite;
+    -moz-animation: pace-spinner 400ms linear infinite;
+    -ms-animation: pace-spinner 400ms linear infinite;
+    -o-animation: pace-spinner 400ms linear infinite;
+    animation: pace-spinner 400ms linear infinite;
+}
 /* Navbar */
 
 .navbar {
